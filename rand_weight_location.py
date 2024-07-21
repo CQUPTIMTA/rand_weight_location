@@ -37,27 +37,23 @@ def add_image(background, foreground, x_offset=2000, y_offset=1000):
 # 12个砝码坐标
 points={
     1:(375.000,649.519),
-    2:(1125.000,649.519),
-    3:(562.500,324.760),
+    3:(1125.000,649.519),
+    2:(562.500,324.760),
     4:(937.500,324.760),
     5:(0,0),
     6:(375,0),
     7:(1125,0),
     8:(1500,0),
     9:(562.500,-324.760),
-    10:(937.500,-324.760),
-    11:(375.000,-649.519),
+    11:(937.500,-324.760),
+    10:(375.000,-649.519),
     12:(1125.000,-649.519)
     }
 
 def rand_creat_weight():
-
     wp = []
-    
-    num = random.sample(range(1, 13), 6)  # 从1到12中随机选择6个不重复的数
-    num=sorted(num)
-    for i in num:
-        wp.append(list(points[i]))
+    for i in range(1,7):
+      wp.append(list(points[2*i-random.randint(0,1)]))
     return wp
 
 if __name__ == '__main__':
